@@ -10,10 +10,10 @@ var StoreFront = angular.module('StoreFront',[]);
 
 StoreFront.config(['$routeProvider', function($routeProvider){
   // Route for '/post'
-  // $routeProvider.when('/product/:productId', {
-  //     templateUrl: '../assets/mainProdcut.html',
-  //       controller: 'PostCtrl'
-  //       });
+  $routeProvider.when('/product', {
+      templateUrl: '../assets/mainProduct.html',
+        controller: 'ProductCtrl'
+        });
   // default route
   $routeProvider.otherwise({
       templateUrl: '../assets/mainIndex.html',
