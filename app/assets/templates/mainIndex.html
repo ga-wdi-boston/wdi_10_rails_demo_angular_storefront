@@ -1,6 +1,6 @@
 <h1 class="text-center">My blog</h1>
 <div class="row" ng-repeat="product in data.products">
-    <h2><a ng-click="viewPost()" >{{ product.name }}</a></h2>
+    <h2><a ng-click="viewPost($index)" >{{ product.name }}</a></h2>
     <p>{{ product.description }}</p>
     <p>{{ product.price}}</p>
 </div>
