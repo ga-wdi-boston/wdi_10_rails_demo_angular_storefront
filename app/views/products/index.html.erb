@@ -1,6 +1,6 @@
 <% @products.each do |product| %>
 	<div class="product-listing">
-		<h3><%= product.name %></h3>
+		<h3><%= link_to product.name, product %></h3>
 		<div class="product-images">
 			<% product.images.each do |product_image| %>
 				<span class="product-thumbnail"><%= image_tag product_image, width: 80 %></span>
