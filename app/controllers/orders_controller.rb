@@ -11,7 +11,7 @@ class OrdersController < ApplicationController
 	    card: params[:stripeToken]
 	  )
 
-	  order = Stripe::Charge.create(
+	  stripe_order = Stripe::Charge.create(
 	    customer: customer.id,
 	    amount: @amount,
 	    description: 'Rails Stripe customer',

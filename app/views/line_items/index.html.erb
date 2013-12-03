@@ -9,8 +9,6 @@
 		</div>
 	<% end %>
 	<div>Items in cart: <%= @line_items.count %></div>
-	<div class='cart-total'>Amount: <%= number_to_currency @line_items.sum {|item| item.product.price } %></div>
-	<%= link_to "Checkout" %>
 </div>
 
 <%= form_tag orders_path do %>
