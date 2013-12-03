@@ -4,8 +4,7 @@ class OrdersController < ApplicationController
 
 	def create
 	  # Amount in cents
-	  binding.pry
-	  @amount = 500
+	  @amount = current_user.line_items.sum {|item| item.product.price * 100 }.to_i
 
 	  customer = Stripe::Customer.create(
 	    email: current_user.email,
@@ -18,6 +17,9 @@ class OrdersController < ApplicationController
 	    description: 'Rails Stripe customer',
 	    currency: 'usd'
 	  )
+
+	# We now need to change the line_item products now to be purchased as part of an Order
+	
 
 	rescue Stripe::CardError => e
 	  flash[:error] = e.message

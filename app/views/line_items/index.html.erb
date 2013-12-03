@@ -19,7 +19,6 @@
       <span>Amount: <%= number_to_currency @line_items.sum {|item| item.product.price } %></span>
     </label>
   </article>
-
   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
           data-description="For purchase of <%= @line_items.count %> items."
