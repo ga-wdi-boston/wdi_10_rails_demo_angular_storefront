@@ -13,3 +13,17 @@ Skyrim: Dragons, long lost to the passages of the Elder Scrolls, have returned t
 						price: 59.99,
 						images: ["http://ecx.images-amazon.com/images/I/91ZZiAtPTML._SL1500_.jpg",
 										 "http://ecx.images-amazon.com/images/I/81yxenO47ZL._SL1500_.jpg"])
+
+Product.new(name: "Kindle",
+						description: "Less than 6 ounces - lighter than a paperback, fits in your pocket
+New darker, hand-tuned fonts for easier reading
+Reads like paper with no glare, even in bright sunlight
+Download books in 60 seconds with built-in Wi-Fi
+Holds over 1,000 books - take your library wherever you go
+Massive book selection. Lowest prices. Over a million titles less than $9.99
+180,000 Kindle-exclusive titles that you won't find anywhere else, including books by best-selling authors such as Kurt Vonnegut
+Supports children's books and includes new parental controls",
+						price: 69.99,
+						images: ["http://g-ecx.images-amazon.com/images/G/01/kindle/dp/2012/KS/KS-slate-02-sm._V399249914_.jpg",
+										 "http://g-ecx.images-amazon.com/images/G/01/kindle/dp/2012/KS/KS-slate-03-sm._V389377576_.jpg",
+										 "http://ecx.images-amazon.com/images/I/61I%2BaLhgCML.jpg"])
