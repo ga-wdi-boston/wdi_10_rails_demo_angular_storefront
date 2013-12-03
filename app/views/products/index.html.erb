@@ -1,7 +1,7 @@
-<% @product.each do |product| %>
+<% @products.each do |product| %>
 	<div class="product-listing">
 		<h3><%= product.name %></h3>
-		<div class="product-thumbnail"><%= image_tag product.image.first %></div>
+		<div class="product-thumbnail"><%= image_tag product.images.first %></div>
 		<div class="product-info">Price: <%= number_to_currency product.price, locale: :us %></div>
 		<div class="product-description">
 			<%= product.description %>
