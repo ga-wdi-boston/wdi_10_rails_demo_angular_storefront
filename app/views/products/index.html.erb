@@ -8,7 +8,7 @@
 		</div>
 		<div class="product-info">Price: <%= number_to_currency product.price, locale: :us %></div>
 		<div class="product-description">
-			<%= product.description %>
+			<%= truncate product.description, length: 140 %>
 		</div>
 	</div>
 <% end %>
