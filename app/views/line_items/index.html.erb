@@ -1,10 +1,12 @@
 <h1>Your Cart</h1>
 
-<div>
+<div class="cart">
 	<% @line_items.each do |item| %>
 		<div>
 			<%= item.product.name %>
+			<%= item.product.price %>
 			<%= button_to "Remove", remove_product_from_cart_path(item), method: :delete %>
 		</div>
 	<% end %>
+	Total: <%= number_to_currency @line_items.sum {|item| item.product.price } %>
 </div>
