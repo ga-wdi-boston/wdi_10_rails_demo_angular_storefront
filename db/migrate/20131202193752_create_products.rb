@@ -4,7 +4,7 @@ class CreateProducts < ActiveRecord::Migration
       t.text :name
       t.text :description
       t.decimal :price, precision: 8, scale: 2
-
+      t.text :images, array: true
       t.timestamps
     end
   end
