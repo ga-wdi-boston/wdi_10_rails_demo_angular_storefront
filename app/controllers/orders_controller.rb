@@ -7,11 +7,11 @@ class OrdersController < ApplicationController
 	  @amount = 500
 
 	  customer = Stripe::Customer.create(
-	    email: 'example@stripe.com',
+	    email: current_user.email,
 	    card: params[:stripeToken]
 	  )
 
-	  charge = Stripe::Charge.create(
+	  order = Stripe::Charge.create(
 	    customer: customer.id,
 	    amount: @amount,
 	    description: 'Rails Stripe customer',
@@ -20,6 +20,6 @@ class OrdersController < ApplicationController
 
 	rescue Stripe::CardError => e
 	  flash[:error] = e.message
-	  redirect_to charges_path
+	  redirect_to orders_path
 	end
 end
