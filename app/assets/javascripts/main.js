@@ -5,3 +5,18 @@
 //= require_tree ./filters/main
 //= require_tree ./controllers/main
 //= require_tree ./directives/main
+
+var StoreFront = angular.module('StoreFront',[]);
+
+StoreFront.config(['$routeProvider', function($routeProvider){
+  // Route for '/post'
+  // $routeProvider.when('/product/:productId', {
+  //     templateUrl: '../assets/mainProdcut.html',
+  //       controller: 'PostCtrl'
+  //       });
+  // default route
+  $routeProvider.otherwise({
+      templateUrl: '../assets/mainIndex.html',
+      controller: 'IndexCtrl'
+      });
+}]);
