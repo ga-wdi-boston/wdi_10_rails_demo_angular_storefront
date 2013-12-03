@@ -1,4 +1,5 @@
 class LineItemsController < ApplicationController
+	# Add to Cart
 	def create
 		product = Product.find(params[:product_id])
 		line_item = product.line_items.build(user: current_user)

@@ -1,7 +1,8 @@
 class OrdersController < ApplicationController
-	def new
+	def index
+		@orders = current_user.orders
 	end
-
+	
 	def create
 	  # Amount in cents
 	  @amount = current_user.line_items.in_cart.sum {|item| item.product.price * 100 }.to_i
