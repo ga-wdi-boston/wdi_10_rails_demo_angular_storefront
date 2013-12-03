@@ -4,6 +4,7 @@ class OrdersController < ApplicationController
 
 	def create
 	  # Amount in cents
+	  binding.pry
 	  @amount = 500
 
 	  customer = Stripe::Customer.create(
