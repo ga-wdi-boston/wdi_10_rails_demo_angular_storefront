@@ -1,0 +1,10 @@
+<h1>Your Cart</h1>
+
+<div>
+	<% @line_items.each do |item| %>
+		<div>
+			<%= item.product.name %>
+			<%= button_to "Remove", remove_product_from_cart_path(item), method: :delete %>
+		</div>
+	<% end %>
+</div>
