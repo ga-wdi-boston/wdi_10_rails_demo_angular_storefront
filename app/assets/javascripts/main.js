@@ -9,8 +9,8 @@
 var StoreFront = angular.module('StoreFront',[]);
 
 StoreFront.config(['$routeProvider', function($routeProvider){
-  // Route for '/post'
-  $routeProvider.when('/product', {
+  // Route for '/product'
+  $routeProvider.when('/product/:productId', {
       templateUrl: '../assets/mainProduct.html',
         controller: 'ProductCtrl'
         });
