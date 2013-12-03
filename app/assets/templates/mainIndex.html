@@ -1,6 +1,11 @@
-<h1 class="text-center">My blog</h1>
-<div class="row" ng-repeat="product in data.products">
-    <h2><a ng-click="viewPost($index)" >{{ product.name }}</a></h2>
-    <p>{{ product.description }}</p>
-    <p>{{ product.price}}</p>
+<h1 class="text-center">Products From Angular</h1>
+<div class="product-listing" ng-repeat="product in data.products">
+    <h3><a ng-click="viewPost($index)" >{{ product.name }}</a></h3>
+    <div class="product-images" >
+      <span class="product-thumbnail" ng-repeat="image in product.images">
+      	<img src={{image}} width='80'/>
+      </span>
+    </div>
+    <div class="product-info">Price: {{ product.price}}</div>
+    <div class="product-description">{{ product.description }}</div>
 </div>
