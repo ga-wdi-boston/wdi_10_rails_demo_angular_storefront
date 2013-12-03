@@ -1,4 +1,5 @@
 Storefront::Application.routes.draw do
+  get "main/index"
   devise_for :users
   root 'products#index'
   resources :products, only: [:index, :show]
