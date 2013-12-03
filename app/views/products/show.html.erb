@@ -8,7 +8,7 @@
 	</div>
 	<div class="product-info">Price: <%= number_to_currency @product.price, locale: :us %></div>
 	<div class="purchase-buttons">
-		<%= "Add to cart", add_product_to_cart_path(@product)) %>
+		<%= button_to "Add to cart", add_product_to_cart_path(@product) %>
 	</div>
 	<div class="product-description">
 		<%= @product.description %>
