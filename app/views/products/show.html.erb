@@ -7,7 +7,10 @@
 			<% end %>
 	</div>
 	<div class="product-info">Price: <%= number_to_currency @product.price, locale: :us %></div>
+	<div class="purchase-buttons">
+		<%= "Buy Now" %>
+	</div>
 	<div class="product-description">
-			<%= @product.description %>
-		</div>
+		<%= @product.description %>
+	</div>
 </div>
