@@ -7,7 +7,7 @@ class LineItemsController < ApplicationController
 	end
 
 	def index
-		@line_items = LineItem.all
+		@line_items = current_user.line_items.in_cart
 	end
 
 	def delete
