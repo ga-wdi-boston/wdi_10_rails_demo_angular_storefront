@@ -1,7 +1,13 @@
-<h1 class="text-center">{{data.productId}} - {{ data.product.name }}</h1>
-<div class="row">
-    <p>{{ data.product.description }}</p>
-</div>
-<div class="row">
-    <p>{{ data.product.price}}</p>
+<div class="product-listing">
+	<h1>{{data.product.name}}</h1>
+	<div class="product-images">
+	 <span class="product-thumbnail" ng-repeat="image in data.product.images">
+      	<img src={{image}} width='80'/>
+      </span>
+	</div>
+	<div class="product-info">Price:{{ data.product.price}}
+	</div>
+	<div class="product-description">
+		{{ data.product.description }}
+	</div>
 </div>
