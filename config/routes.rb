@@ -3,7 +3,7 @@ Storefront::Application.routes.draw do
   devise_for :users
   #root 'products#index'
   root 'main#index'
-  resources :products, only: [:index, :show]
+  resources :products, only: [:index, :show, :create]
   resources :orders, only: [:new, :create]
   post '/products/:product_id/add_to_cart', to: 'line_items#create', as: 'add_product_to_cart'
   get '/cart', to: 'line_items#index', as: 'cart'
