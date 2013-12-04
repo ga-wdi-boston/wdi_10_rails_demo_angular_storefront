@@ -1,8 +1,19 @@
-var ProductCtrl = function($scope, $routeParams){                                              
+var ProductCtrl = function($scope, $routeParams, $http){                                              
 
 	$scope.data = {product:
-		{name: 'Product 1', description: "Product 1 description", price: 40.23}
+		{name: 'Loading a Product', description: "", price: ""}
 	};
 
-	$scope.data.productId = $routeParams.productId;
+  loadProduct = function(){
+    $http.get('./products/'+ $routeParams.productId + '.json').success(function(data){
+      $scope.data.product = data;
+      console.log('Successfully loaded product.');
+
+    }).error(function(){
+      console.log('Failed to load product');
+    });
+  }; // loadProduct function
+
+ loadProduct();
+	//$scope.data.productId = $routeParams.productId;
 }; 
