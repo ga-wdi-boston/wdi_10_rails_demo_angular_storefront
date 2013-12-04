@@ -1,22 +1,9 @@
-var IndexCtrl = function($scope, $location, $http){                                              
+var IndexCtrl = function($scope, $location, $http, productData){                                              
 
- $scope.data = {products: [
-  {name: 'Loading Products', description: "", price: ''} 
-  ]};
+ $scope.data = productData;
+ productData.loadProducts();
 
-  loadProducts = function(){
-    $http.get('./products.json').success(function(data){
-      $scope.data.products = data;
-      console.log('Successfully loaded posts.');
-
-    }).error(function(){
-      console.log('Failed to load posts');
-    });
-  }; // loadProducts function
-
-  loadProducts();
-
-  $scope.viewPost = function(productId){
+ $scope.viewPost = function(productId){
     $location.url('/product/' + productId);
   }
 
