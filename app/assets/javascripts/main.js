@@ -8,15 +8,25 @@
 
 var StoreFront = angular.module('StoreFront',[]);
 
+StoreFront.config(["$httpProvider", function(provider){
+  provider.defaults.headers.common['X-CSRF-Token'] = $('meta[name=csrf-token]').attr('content');
+}]);
+
 StoreFront.config(['$routeProvider', function($routeProvider){
+  // Route for '/product/new'	
+  $routeProvider.when('/product/new',{
+    templateUrl: '../assets/mainCreatePost.html',
+    controller: 'CreateProductCtrl'
+  });  
+
   // Route for '/product'
   $routeProvider.when('/product/:productId', {
-      templateUrl: '../assets/mainProduct.html',
-        controller: 'ProductCtrl'
-        });
+    templateUrl: '../assets/mainProduct.html',
+    controller: 'ProductCtrl'
+  });
   // default route
   $routeProvider.otherwise({
-      templateUrl: '../assets/mainIndex.html',
-      controller: 'IndexCtrl'
-      });
+    templateUrl: '../assets/mainIndex.html',
+    controller: 'IndexCtrl'
+  });
 }]);
