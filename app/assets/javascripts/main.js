@@ -13,6 +13,7 @@ StoreFront.config(["$httpProvider", function(provider){
 }]);
 
 StoreFront.config(['$routeProvider', function($routeProvider){
+  
   // Route for '/product/new'	
   $routeProvider.when('/product/new',{
     templateUrl: '../assets/mainCreatePost.html',
@@ -24,6 +25,13 @@ StoreFront.config(['$routeProvider', function($routeProvider){
     templateUrl: '../assets/mainProduct.html',
     controller: 'ProductCtrl'
   });
+
+  // Route for shopping cart
+  $routeProvider.when('/cart',{
+    templateUrl: '../assets/mainCart.html',
+    controller: 'CartCtrl'
+  });  
+
   // default route
   $routeProvider.otherwise({
     templateUrl: '../assets/mainIndex.html',
