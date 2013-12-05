@@ -5,7 +5,7 @@ class ProductsController < ApplicationController
 		@products = Product.all
     respond_with(@products) do |format|
       format.html
-      format.json { render :json => @products.as_json}
+      format.json { render :json => @products}
     end 
 	end
 
@@ -13,7 +13,7 @@ class ProductsController < ApplicationController
 		@product = Product.find(params[:id])
     respond_with(@product) do |format|
       format.html
-      format.json { render :json => @product.as_json}
+      format.json { render :json => @product}
     end 
 	end
 
@@ -31,7 +31,7 @@ class ProductsController < ApplicationController
     end
 
     respond_with(new_product) do |format|
-      format.json {render :json => new_product.as_json }
+      format.json {render :json => new_product}
     end
 
   end

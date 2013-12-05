@@ -11,7 +11,13 @@ class LineItemsController < ApplicationController
 	end
 
 	def index
-		@line_items = current_user.line_items.in_cart
+		respond_to do|format|
+			format.html {@line_items = current_user.line_items.in_cart}
+			# TODO: replace this when the json request has a current_user
+			# format.json {current_user.line_items.in_cart.to_json}
+			format.json {render :json => LineItem.in_cart}
+		end
+
 	end
 
 	def delete

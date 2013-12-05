@@ -1,12 +1,15 @@
 // javascript constructor function
 // that acts as an Angular controller.
-var CartCtrl = function($scope, $http){
+var CartCtrl = function($scope, $location, $http){
 
-  var getCartLineItems = function(){
-      $http.get('').
+  $scope.getCartLineItems = function(){
+      $http.get('/cart').
         success(function(data){
           $scope.lineItems = data;
           console.log("Got Cart line items");
+        }).
+        error(function(data){
+          console.error("Error: getting cart line items");
         });
    };
 
@@ -14,11 +17,13 @@ var CartCtrl = function($scope, $http){
     $http.post("/products/"+ productId + "/add_to_cart", productId).
       success(function(data){
         console.log("Successfully add product to cart");
+      }).
+      error(function(data){
+        console.error("Error: adding product to cart");
       });
     $location.url('/cart');
-    console.log("Adding a product "+ productId + " to the cart");
   };
 
   // get all the 
-  getCartLineItems();
+  // getCartLineItems();
 }
