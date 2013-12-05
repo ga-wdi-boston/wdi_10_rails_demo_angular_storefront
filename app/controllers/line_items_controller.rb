@@ -1,9 +1,13 @@
 class LineItemsController < ApplicationController
+
 	def create
 		product = Product.find(params[:product_id])
 		line_item = product.line_items.build(user: current_user)
 		line_item.save
-		redirect_to :cart
+		respond_to do |format|
+			format.html	{redirect_to :cart}
+			format.json {render nothing: true}
+		end
 	end
 
 	def index
