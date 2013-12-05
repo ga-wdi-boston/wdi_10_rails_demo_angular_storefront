@@ -10,5 +10,7 @@
 	<div class="product-description">
 		{{ data.product.description }}
 	</div>
-	<button ng-click='addProductToCart(data.product.id)'>Add to Cart</button>
+	<div ng-controller='CartCtrl'>
+	  <button ng-click='addProductToCart(data.product.id)'>Add to Cart</button>
+	</div>
 </div>
