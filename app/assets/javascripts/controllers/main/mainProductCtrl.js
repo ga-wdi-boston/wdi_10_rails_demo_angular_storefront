@@ -3,4 +3,9 @@ var ProductCtrl = function($scope, $routeParams, $http, productData){
 
   productData.loadProduct($routeParams.productId);
   $scope.data.product = productData.products[$routeParams.productId - 1]
+
+  $scope.addProductToCart = function(productId){
+    console.log("Adding a product "+ productId + " to the cart");
+  }
+
 }; 
