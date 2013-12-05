@@ -5,7 +5,7 @@ class ProductsController < ApplicationController
 		@products = Product.all
     respond_with(@products) do |format|
       format.html
-      format.json { render :json => @products}
+      format.json { render :json => @products, :root => false }
     end 
 	end
 

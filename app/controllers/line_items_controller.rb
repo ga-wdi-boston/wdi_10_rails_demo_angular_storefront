@@ -15,7 +15,7 @@ class LineItemsController < ApplicationController
 			format.html {@line_items = current_user.line_items.in_cart}
 			# TODO: replace this when the json request has a current_user
 			# format.json {current_user.line_items.in_cart.to_json}
-			format.json {render :json => LineItem.in_cart}
+			format.json {render :json => LineItem.in_cart, :root => false}
 		end
 
 	end
