@@ -1,4 +1,4 @@
-angular.module('sessionService', []).factory('Session', function($location, $http, $q) {
+angular.module('StoreFront').factory('loginSession', function($location, $http, $q) {
 
   // Redirect to the given url (defaults to '/')
   var redirect = function(url) {
@@ -6,8 +6,18 @@ angular.module('sessionService', []).factory('Session', function($location, $htt
     $location.path(url);
   };
 
+  // New concepts here. Promises. 
+  // See http://egghead.io/lessons/angularjs-promises
+
+  // The $q service that is injected above implements Promises for Angular.
+  // This allows callback like functions to be executed asynchronously.
+  // Functions passed to the "then" method/function are executed 
+  // asychronously.
+
   var remoteLogin = function(email,password){
     // send an HTTP post to /login
+    // "then" execute the anonymous function when the response is received 
+    // from the back-end, Rails.
     return $http.post('/login', {user: {email: email, password: password} })
       .then(function(response) {
         // handle the login response
@@ -22,7 +32,9 @@ angular.module('sessionService', []).factory('Session', function($location, $htt
   };
 
   var remoteLogout = function(redirectTo){
-    // send a HTTP post to /logout
+     // send a HTTP post to /logout
+     // "then" execute the anonymous function when the response is received 
+     // from the back-end, Rails.
     $http.post('/logout')
     .then(function() {
       // handle logout response

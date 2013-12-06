@@ -50,6 +50,11 @@ StoreFront.config(['$routeProvider', function($routeProvider){
     templateUrl: '../assets/mainCart.html',
     controller: 'CartCtrl'
   });
+  // Login
+  $routeProvider.when('/login', {
+    templateUrl: '../assets/login.html',
+    controller: 'LoginCtrl'
+  });
   // default route
   $routeProvider.otherwise({
     templateUrl: '../assets/mainIndex.html',
