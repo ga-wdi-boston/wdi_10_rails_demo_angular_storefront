@@ -4,7 +4,7 @@
 		<div class="product-images">
 			<% product.images.each do |product_image| %>
 				<span class="product-thumbnail"><%= image_tag product_image, width: 80 %></span>
-			<% end %>
+			<% end if product.images.present? %>
 		</div>
 		<div class="product-info">Price: <%= number_to_currency product.price, locale: :us %></div>
 		<div class="product-description">
