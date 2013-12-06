@@ -28,6 +28,10 @@ angular.module('StoreFront').factory('loginSession', function($location, $http, 
           //$location.path(response.a.redirect);
           $location.path('/');
         }
+      })
+      .then(function(){
+        $('#login-link').hide();
+        $('#logout-link').show();
       });
   };
 
@@ -40,6 +44,10 @@ angular.module('StoreFront').factory('loginSession', function($location, $http, 
       // handle logout response
       service.currentUser = null;
       redirect(redirectTo);
+    })
+    .then(function(){
+      $('#logout-link').hide();
+      $('#login-link').show();
     });
   };
 

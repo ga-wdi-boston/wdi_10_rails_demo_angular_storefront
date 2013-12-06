@@ -57,6 +57,11 @@ StoreFront.config(['$routeProvider', function($routeProvider){
     templateUrl: '../assets/login.html',
     controller: 'LoginCtrl'
   });
+  // Logout
+  $routeProvider.when('/logout', {
+    templateUrl: '../assets/logout.html',
+    controller: 'LogoutCtrl'
+  });
   // default route
   $routeProvider.otherwise({
     templateUrl: '../assets/mainIndex.html',
