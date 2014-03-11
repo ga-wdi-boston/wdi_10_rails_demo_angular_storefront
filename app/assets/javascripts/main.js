@@ -6,7 +6,7 @@
 //= require_tree ./controllers/main
 //= require_tree ./directives/main
 
-var StoreFront = angular.module('StoreFront',[]);
+var StoreFront = angular.module('StoreFront',['ngRoute']);
 
 StoreFront.config(["$httpProvider", function(provider){
   provider.defaults.headers.common['X-CSRF-Token'] = $('meta[name=csrf-token]').attr('content');
@@ -35,11 +35,11 @@ StoreFront.config(["$httpProvider", function(provider){
 }]);
 
 StoreFront.config(['$routeProvider', function($routeProvider){
-  // Route for '/product/new'	
+  // Route for '/product/new'
   $routeProvider.when('/product/new',{
     templateUrl: '../assets/mainCreatePost.html',
     controller: 'CreateProductCtrl'
-  });  
+  });
 
   // Route for '/product'
   $routeProvider.when('/product/:productId', {
