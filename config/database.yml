@@ -1,18 +1,16 @@
-development:
+defaults: &defaults
   adapter: postgresql
   encoding: unicode
-  database: Storefront_development
   pool: 5
+
+development:
+  <<: *defaults
+  database: Storefront_development
 
 test:
-  adapter: postgresql
-  encoding: unicode
+  <<: *defaults
   database: Storefront_test
-  pool: 5
 
 production:
-  adapter: postgresql
-  encoding: unicode
+  <<: *defaults
   database: Storefront_production
-  pool: 5
-
